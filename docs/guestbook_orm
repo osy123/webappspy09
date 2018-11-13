@@ -1,0 +1,31 @@
+==model delete
+
+SQL)
+delete from guestbook where no=1 and password='1234'
+python)
+guestbook = Guestbook.objects.filter(id=1).filter(password='1234').delete()
+
+== select
+SQL)
+select * from guestbook where id=1;
+Python)
+guestbook = Guestbook.objects.get(id=1)
+
+SQL)
+select * from guestbook where first_name = '홍';
+Python)
+guestbook = Guestbook.objects.get(first_name='홍')
+
+==update
+SQL)
+update user set name = '김',
+                        email = 'kim@gmail.com',
+                        password = '1234'
+
+where no =1
+Python)
+user= User.objects.get(id=1)
+user.name = '김'
+user.email= 'kim@gmail.com'
+user.password='1234'
+user.save()
